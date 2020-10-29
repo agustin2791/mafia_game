@@ -21,6 +21,7 @@ Vue.use(Amplify, AmplifyPlugin)
 Vue.use(BootstrapVue);
 Vue.config.productionTip = false
 
+
 new Vue({
   router,
   store,
