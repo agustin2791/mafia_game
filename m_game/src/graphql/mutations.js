@@ -115,19 +115,6 @@ export const createPlayer = /* GraphQL */ `
       isCop
       isAlive
       isHost
-      game {
-        id
-        party_code
-        party_limit
-        guests {
-          nextToken
-        }
-        isActive
-        roundActive
-        discussionActive
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
     }
@@ -148,19 +135,6 @@ export const updatePlayer = /* GraphQL */ `
       isCop
       isAlive
       isHost
-      game {
-        id
-        party_code
-        party_limit
-        guests {
-          nextToken
-        }
-        isActive
-        roundActive
-        discussionActive
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
     }
@@ -181,19 +155,6 @@ export const deletePlayer = /* GraphQL */ `
       isCop
       isAlive
       isHost
-      game {
-        id
-        party_code
-        party_limit
-        guests {
-          nextToken
-        }
-        isActive
-        roundActive
-        discussionActive
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
     }
