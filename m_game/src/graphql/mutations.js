@@ -8,29 +8,27 @@ export const createGame = /* GraphQL */ `
   ) {
     createGame(input: $input, condition: $condition) {
       id
-      host {
-        id
-        name
-        isStoryTeller
-        isPed
-        isMafia
-        isCop
-        createdAt
-        updatedAt
-      }
       party_code
       party_limit
       guests {
-        id
-        name
-        isStoryTeller
-        isPed
-        isMafia
-        isCop
-        createdAt
-        updatedAt
+        items {
+          id
+          game_id
+          name
+          isStoryTeller
+          isPed
+          isMafia
+          isCop
+          isAlive
+          isHost
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       isActive
+      roundActive
+      discussionActive
       createdAt
       updatedAt
     }
@@ -43,29 +41,27 @@ export const updateGame = /* GraphQL */ `
   ) {
     updateGame(input: $input, condition: $condition) {
       id
-      host {
-        id
-        name
-        isStoryTeller
-        isPed
-        isMafia
-        isCop
-        createdAt
-        updatedAt
-      }
       party_code
       party_limit
       guests {
-        id
-        name
-        isStoryTeller
-        isPed
-        isMafia
-        isCop
-        createdAt
-        updatedAt
+        items {
+          id
+          game_id
+          name
+          isStoryTeller
+          isPed
+          isMafia
+          isCop
+          isAlive
+          isHost
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       isActive
+      roundActive
+      discussionActive
       createdAt
       updatedAt
     }
@@ -78,29 +74,27 @@ export const deleteGame = /* GraphQL */ `
   ) {
     deleteGame(input: $input, condition: $condition) {
       id
-      host {
-        id
-        name
-        isStoryTeller
-        isPed
-        isMafia
-        isCop
-        createdAt
-        updatedAt
-      }
       party_code
       party_limit
       guests {
-        id
-        name
-        isStoryTeller
-        isPed
-        isMafia
-        isCop
-        createdAt
-        updatedAt
+        items {
+          id
+          game_id
+          name
+          isStoryTeller
+          isPed
+          isMafia
+          isCop
+          isAlive
+          isHost
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       isActive
+      roundActive
+      discussionActive
       createdAt
       updatedAt
     }
@@ -113,11 +107,14 @@ export const createPlayer = /* GraphQL */ `
   ) {
     createPlayer(input: $input, condition: $condition) {
       id
+      game_id
       name
       isStoryTeller
       isPed
       isMafia
       isCop
+      isAlive
+      isHost
       createdAt
       updatedAt
     }
@@ -130,11 +127,14 @@ export const updatePlayer = /* GraphQL */ `
   ) {
     updatePlayer(input: $input, condition: $condition) {
       id
+      game_id
       name
       isStoryTeller
       isPed
       isMafia
       isCop
+      isAlive
+      isHost
       createdAt
       updatedAt
     }
@@ -147,11 +147,14 @@ export const deletePlayer = /* GraphQL */ `
   ) {
     deletePlayer(input: $input, condition: $condition) {
       id
+      game_id
       name
       isStoryTeller
       isPed
       isMafia
       isCop
+      isAlive
+      isHost
       createdAt
       updatedAt
     }

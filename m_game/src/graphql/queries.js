@@ -5,29 +5,27 @@ export const getGame = /* GraphQL */ `
   query GetGame($id: ID!) {
     getGame(id: $id) {
       id
-      host {
-        id
-        name
-        isStoryTeller
-        isPed
-        isMafia
-        isCop
-        createdAt
-        updatedAt
-      }
       party_code
       party_limit
       guests {
-        id
-        name
-        isStoryTeller
-        isPed
-        isMafia
-        isCop
-        createdAt
-        updatedAt
+        items {
+          id
+          game_id
+          name
+          isStoryTeller
+          isPed
+          isMafia
+          isCop
+          isAlive
+          isHost
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       isActive
+      roundActive
+      discussionActive
       createdAt
       updatedAt
     }
@@ -42,29 +40,14 @@ export const listGames = /* GraphQL */ `
     listGames(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        host {
-          id
-          name
-          isStoryTeller
-          isPed
-          isMafia
-          isCop
-          createdAt
-          updatedAt
-        }
         party_code
         party_limit
         guests {
-          id
-          name
-          isStoryTeller
-          isPed
-          isMafia
-          isCop
-          createdAt
-          updatedAt
+          nextToken
         }
         isActive
+        roundActive
+        discussionActive
         createdAt
         updatedAt
       }
@@ -76,11 +59,14 @@ export const getPlayer = /* GraphQL */ `
   query GetPlayer($id: ID!) {
     getPlayer(id: $id) {
       id
+      game_id
       name
       isStoryTeller
       isPed
       isMafia
       isCop
+      isAlive
+      isHost
       createdAt
       updatedAt
     }
@@ -95,11 +81,14 @@ export const listPlayers = /* GraphQL */ `
     listPlayers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        game_id
         name
         isStoryTeller
         isPed
         isMafia
         isCop
+        isAlive
+        isHost
         createdAt
         updatedAt
       }

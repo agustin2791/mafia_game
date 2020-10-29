@@ -5,29 +5,27 @@ export const onCreateGame = /* GraphQL */ `
   subscription OnCreateGame {
     onCreateGame {
       id
-      host {
-        id
-        name
-        isStoryTeller
-        isPed
-        isMafia
-        isCop
-        createdAt
-        updatedAt
-      }
       party_code
       party_limit
       guests {
-        id
-        name
-        isStoryTeller
-        isPed
-        isMafia
-        isCop
-        createdAt
-        updatedAt
+        items {
+          id
+          game_id
+          name
+          isStoryTeller
+          isPed
+          isMafia
+          isCop
+          isAlive
+          isHost
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       isActive
+      roundActive
+      discussionActive
       createdAt
       updatedAt
     }
@@ -37,29 +35,27 @@ export const onUpdateGame = /* GraphQL */ `
   subscription OnUpdateGame {
     onUpdateGame {
       id
-      host {
-        id
-        name
-        isStoryTeller
-        isPed
-        isMafia
-        isCop
-        createdAt
-        updatedAt
-      }
       party_code
       party_limit
       guests {
-        id
-        name
-        isStoryTeller
-        isPed
-        isMafia
-        isCop
-        createdAt
-        updatedAt
+        items {
+          id
+          game_id
+          name
+          isStoryTeller
+          isPed
+          isMafia
+          isCop
+          isAlive
+          isHost
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       isActive
+      roundActive
+      discussionActive
       createdAt
       updatedAt
     }
@@ -69,29 +65,27 @@ export const onDeleteGame = /* GraphQL */ `
   subscription OnDeleteGame {
     onDeleteGame {
       id
-      host {
-        id
-        name
-        isStoryTeller
-        isPed
-        isMafia
-        isCop
-        createdAt
-        updatedAt
-      }
       party_code
       party_limit
       guests {
-        id
-        name
-        isStoryTeller
-        isPed
-        isMafia
-        isCop
-        createdAt
-        updatedAt
+        items {
+          id
+          game_id
+          name
+          isStoryTeller
+          isPed
+          isMafia
+          isCop
+          isAlive
+          isHost
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       isActive
+      roundActive
+      discussionActive
       createdAt
       updatedAt
     }
@@ -101,11 +95,14 @@ export const onCreatePlayer = /* GraphQL */ `
   subscription OnCreatePlayer {
     onCreatePlayer {
       id
+      game_id
       name
       isStoryTeller
       isPed
       isMafia
       isCop
+      isAlive
+      isHost
       createdAt
       updatedAt
     }
@@ -115,11 +112,14 @@ export const onUpdatePlayer = /* GraphQL */ `
   subscription OnUpdatePlayer {
     onUpdatePlayer {
       id
+      game_id
       name
       isStoryTeller
       isPed
       isMafia
       isCop
+      isAlive
+      isHost
       createdAt
       updatedAt
     }
@@ -129,11 +129,14 @@ export const onDeletePlayer = /* GraphQL */ `
   subscription OnDeletePlayer {
     onDeletePlayer {
       id
+      game_id
       name
       isStoryTeller
       isPed
       isMafia
       isCop
+      isAlive
+      isHost
       createdAt
       updatedAt
     }

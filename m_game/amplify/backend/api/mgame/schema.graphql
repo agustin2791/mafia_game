@@ -1,17 +1,22 @@
 type Game @model {
   id: ID!
-  host: Player
-  party_code: String
-  party_limit: Int
-  guests: [Player]
+  party_code: String!
+  party_limit: Int!
+  guests: [Player]! @connection(keyName: "gamePlayer", fields: ["id"])
   isActive: Boolean!
-}
+  roundActive: Boolean!
+  discussionActive: Boolean!
+} 
 
-type Player @model {
+type Player @model 
+  @key(name: "gamePlayer", fields: ["game_id"]) {
   id: ID!
+  game_id: ID!
   name: String!
   isStoryTeller: Boolean!
   isPed: Boolean!
   isMafia: Boolean!
   isCop: Boolean!
+  isAlive: Boolean!
+  isHost: Boolean!
 }

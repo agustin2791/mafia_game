@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "mgame370602ce": {}
+        "mgame370602ce": {},
+        "userPoolGroups": {}
       }
     }
   }

@@ -4,6 +4,8 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
+import UserHome from '../views/UserHome.vue'
+import Guest from '../views/Guest.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -26,6 +28,16 @@ const routes = [
     path: '/logout',
     name: 'Logout',
     component: Logout
+  },
+  {
+    path: '/user_home',
+    name: 'UserHome',
+    component: UserHome
+  },
+  {
+    path: '/guest',
+    name: 'Guest',
+    component: Guest
   }
 ]
 
