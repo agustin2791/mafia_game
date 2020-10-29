@@ -67,6 +67,19 @@ export const getPlayer = /* GraphQL */ `
       isCop
       isAlive
       isHost
+      game {
+        id
+        party_code
+        party_limit
+        guests {
+          nextToken
+        }
+        isActive
+        roundActive
+        discussionActive
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -89,6 +102,16 @@ export const listPlayers = /* GraphQL */ `
         isCop
         isAlive
         isHost
+        game {
+          id
+          party_code
+          party_limit
+          isActive
+          roundActive
+          discussionActive
+          createdAt
+          updatedAt
+        }
         createdAt
         updatedAt
       }

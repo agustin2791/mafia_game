@@ -103,6 +103,19 @@ export const onCreatePlayer = /* GraphQL */ `
       isCop
       isAlive
       isHost
+      game {
+        id
+        party_code
+        party_limit
+        guests {
+          nextToken
+        }
+        isActive
+        roundActive
+        discussionActive
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -120,6 +133,19 @@ export const onUpdatePlayer = /* GraphQL */ `
       isCop
       isAlive
       isHost
+      game {
+        id
+        party_code
+        party_limit
+        guests {
+          nextToken
+        }
+        isActive
+        roundActive
+        discussionActive
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -137,6 +163,19 @@ export const onDeletePlayer = /* GraphQL */ `
       isCop
       isAlive
       isHost
+      game {
+        id
+        party_code
+        party_limit
+        guests {
+          nextToken
+        }
+        isActive
+        roundActive
+        discussionActive
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
