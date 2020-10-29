@@ -2,7 +2,7 @@ type Game @model {
   id: ID!
   party_code: String!
   party_limit: Int!
-  guests: [Player] @connection(name: "gamePlayer", keyField: "id")
+  guests: [Player]! @connection(keyName: "gamePlayer", keyField: "id")
   isActive: Boolean!
   roundActive: Boolean!
   discussionActive: Boolean!
@@ -19,5 +19,4 @@ type Player @model
   isCop: Boolean!
   isAlive: Boolean!
   isHost: Boolean!
-  game: Game @connection(keyField: "game_id")
 }
