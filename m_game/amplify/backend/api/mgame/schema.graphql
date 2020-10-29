@@ -19,5 +19,5 @@ type Player @model
   isCop: Boolean!
   isAlive: Boolean!
   isHost: Boolean!
-  game: Game @connection(fields: ["game_id"])
+  game: Game @connection(keyField: "game_id")
 }
