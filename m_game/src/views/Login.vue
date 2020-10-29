@@ -27,6 +27,7 @@ export default {
             let _t = this
             try {
                 await Auth.signIn(_t.username, _t.password)
+                this.$router.push({path: 'user_home'})
             } catch (error) {
                 console.log('error signing in:', error)
             }
